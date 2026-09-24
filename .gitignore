@@ -19,3 +19,6 @@ vendor
 # Python bytecode from bin/ helper scripts
 __pycache__/
 *.pyc
+bundle_log.txt
+build_env.bat
+_site/
