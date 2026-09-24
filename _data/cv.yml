@@ -1,189 +1,202 @@
 cv:
-  name: Albert Einstein
-  label: Scientist
-  email: einstein@example.com
-  location: Princeton, NJ
+  name: Hossein Moosavi Shoa'r
+  label: Mechanical Engineer - Energy Conversion
+  email: shm137932@gmail.com
+  location: Isfahan, Iran
   image: ""
-  summary: A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time
+  summary: Mechanical engineer and M.Sc. student in Energy Conversion with research experience in thermal systems, heat transfer, and energy engineering. Skilled in MATLAB, Python, Fluent, numerical modeling, optimization, and experimental setup development. Seeking a PhD opportunity in energy storage and sustainable thermal systems.
 
   social_networks:
-    - network: X
-      username: AlbertEinstein
-    - network: GitHub
-      username: example
-    - network: LinkedIn
-      username: example
-
-  address:
-    street: 2712 Broadway St
-    city: San Francisco
-    region: California
-    postalCode: CA 94115
-    countryCode: US
+    - network: Email
+      username: shm137932@gmail.com
 
   sections:
     Education:
-      - institution: University of Zurich
-        location: Zurich, Switzerland
-        url: https://www.uzh.ch/
-        area: Physics
-        studyType: PhD
-        start_date: 1900
-        end_date: 1905
-        score: ""
-        courses: "Theory of Relativity"
+      - institution: Sharif University of Technology
+        location: Tehran, Iran
+        url: https://en.sharif.edu/
+        area: Energy Conversion
+        studyType: M.Sc.
+        start_date: 2023
+        end_date: 2026
+        score: "GPA 19.02/20"
         highlights:
-          - Description 1.
-          - Description 2.
+          - Expected graduation: July 22, 2026
 
-      - institution: Eidgenössische Technische Hochschule
-        location: Zurich, Switzerland
-        area: Physics
-        studyType: Federal teaching diploma
-        start_date: 1896
-        end_date: 1900
+      - institution: Isfahan University of Technology
+        location: Isfahan, Iran
+        area: Mechanical Engineering
+        studyType: B.Sc.
+        start_date: 2019
+        end_date: 2023
+        score: "GPA 18.99/20"
         highlights:
-          - Description 1.
-          - Description 2.
+          - Ranked 3rd among 120 mechanical engineering students
 
     Experience:
-      - company: Institute for Advanced Study, Princeton University
-        position: Professor of Theoretical Physics
-        location: Princeton University, NJ
-        start_date: 1933
-        end_date: 1955
-        summary: Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.
+      - company: TOMCOV Company (supervised by Dr. M. R. Forouzan)
+        position: Developer - Vacuum system design application for street sweepers
+        location: Isfahan, Iran
+        start_date: 2023
+        end_date: 2023
+        summary: Developed a MATLAB application for designing the vacuum system of street sweepers.
         highlights:
-          - Relativity
-          - Description 2.
+          - System modeling, fluid mechanics, turbomachinery
 
-      - company: California Institute of Technology
-        position: Visiting Professor
-        location: Pasadena, California, US
-        start_date: 1933
-        end_date: 1933
+      - company: Isfahan University of Technology
+        position: B.Sc. project - Air-water generator using thermoelectric coolers
+        location: Isfahan, Iran
+        start_date: 2023
+        end_date: 2023
+        summary: Semi-analytical modeling of heat exchangers integrated with TECs for analyzing the efficiency of air-water generator technology. Resulted in a journal publication.
         highlights:
-          - Description 1.
-          - Description 2.
+          - MATLAB programming, heat and mass transfer analysis
 
-      - company: Kaiser Wilhelm Institute for Physics
-        position: Director
-        location: Berlin, Germany
-        start_date: 1917
-        end_date: 1933
+      - company: TOMCOV Company
+        position: Apprentice
+        location: Isfahan, Iran
+        start_date: 2022
+        end_date: 2022
+        summary: CAD modeling of a new flow meter and a street sweeper.
+        highlights:
+          - Inventor
 
-      - company: Karl-Ferdinand University
-        position: Professor of Theoretical Physics
-        location: Prague, Czechoslovakia
-        start_date: 1911
-        end_date: 1917
+      - company: Fly Cup glider competition
+        position: Team member - Design, build, and flight test
+        location: Isfahan, Iran
+        start_date: 2023
+        end_date: 2023
+        summary: Placed 6th of 39. The glider was dynamically and aerodynamically analyzed and optimized, then built and tested.
+        highlights:
+          - MATLAB, CFD (Fluent), SolidWorks, aerodynamics, dynamics
 
-      - company: University of Zurich
-        position: Associate Professor of Theoretical Physics
-        location: Zurich, Switzerland
-        start_date: 1909
-        end_date: 1911
+      - company: Rahneshan Tournament
+        position: Team member - Car exhaust heat recovery system
+        location: Isfahan, Iran
+        start_date: 2021
+        end_date: 2021
+        summary: Finished 2nd. Designed a thermoelectric exhaust waste-heat recovery system.
+        highlights:
+          - Ansys Fluent, thermoelectric analysis, CAD
+
+    Teaching:
+      - company: Sharif University of Technology
+        position: Teaching Assistant - Design and Optimization of Thermal Systems
+        location: Tehran, Iran
+        start_date: 2026
+        end_date: 2026
+        summary: Instructor of record - Dr. H. Bahman Jahromi
+
+      - company: Sharif University of Technology
+        position: Teaching Assistant - Thermodynamics 2
+        location: Tehran, Iran
+        start_date: 2026
+        end_date: 2026
+        summary: Instructor of record - Dr. H. Pakzad
+
+      - company: Sharif University of Technology
+        position: Teaching Assistant - Power Plant Design
+        location: Tehran, Iran
+        start_date: 2025
+        end_date: 2025
+        summary: Instructor of record - Dr. H. Bahman Jahromi
+
+      - company: Sharif University of Technology
+        position: Lab Instructor - Thermodynamics (undergraduate)
+        location: Tehran, Iran
+        start_date: 2025
+        end_date: 2025
+        summary: Instructor of record - Dr. M. H. Saidi
+
+      - company: Sharif University of Technology
+        position: Lab Instructor - Fluid Mechanics (undergraduate)
+        location: Tehran, Iran
+        start_date: 2025
+        end_date: 2025
+        summary: Instructor of record - Dr. B. Farhanieh (Spring and Fall 2025)
+
+      - company: Sharif University of Technology
+        position: Teaching Assistant - Thermodynamics 1
+        location: Tehran, Iran
+        start_date: 2024
+        end_date: 2025
+        summary: Instructor of record - Dr. A. Moosavi (Spring 2024 and Spring 2025)
+
+      - company: Sharif University of Technology
+        position: Teaching Assistant - Fluid Mechanics 1
+        location: Tehran, Iran
+        start_date: 2023
+        end_date: 2023
+        summary: Instructor of record - Dr. A. Moosavi
+
+      - company: Isfahan University of Technology
+        position: Teaching Assistant - Fluid Mechanics 2
+        location: Isfahan, Iran
+        start_date: 2023
+        end_date: 2023
+        summary: Instructor of record - Dr. Saghafian
+
+      - company: Isfahan University of Technology
+        position: Teaching Assistant - Fluid Mechanics 1
+        location: Isfahan, Iran
+        start_date: 2021
+        end_date: 2021
+        summary: Instructor of record - Dr. Madadollahi
+
+      - company: Isfahan University of Technology
+        position: Teaching Assistant - Mechanics of Solids
+        location: Isfahan, Iran
+        start_date: 2021
+        end_date: 2021
+        summary: Instructor of record - Dr. Karevan
 
     Volunteer:
-      - company: People's Climate March
-        position: Lead Organizer
-        location: Zurich, Switzerland
-        start_date: 2014-04-01
-        end_date: 2015-07-01
-        summary: Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.
-        highlights:
-          - "Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march."
-          - "Men of the year 2014 by Time magazine"
+      - company: International Conference on Energy Resilience and Sustainability
+        position: Staff crew
+        location: Tehran, Iran
+        start_date: 2024
+        end_date: 2024
+
+      - company: Scientific Association of Mechanical Engineering, Isfahan University of Technology
+        position: Member
+        location: Isfahan, Iran
+        start_date: 2023
+        end_date: 2023
+        summary: Arranged festivals, tournaments, and extra classes for students.
 
     Awards:
-      - title: Nobel Prize in Physics
-        authors:
-          - "Royal Swedish Academy of Sciences"
-        date: 1921-11-01
-        awarder: Royal Swedish Academy of Sciences
-        url: https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/
-        summary: The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'
+      - title: Top scientific student
+        awarder: Isfahan University of Technology
+        date: 2024
 
-      - title: Max Planck Medal
-        authors:
-          - "German Physical Society"
-        date: 2029
-        awarder: German Physical Society
-        summary: Awarded for outstanding scientific achievement
+      - title: Direct M.Sc. admission to Sharif University of Technology
+        awarder: National outstanding-student selection procedure
+        date: 2023
 
-    Publications:
-      - title: Zur Elektrodynamik bewegter Körper
-        authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1905-06-30
-        url: https://en.wikisource.org/wiki/Translation:On_the_Electrodynamics_of_Moving_Bodies
-        summary: It concerned an interpretation of the Michelson–Morley experiment and the properties of light and time. Special relativity incorporates the principle that the speed of light is the same for all inertial observers regardless of the state of motion of the source.
+      - title: Ranked 3rd among 120 mechanical engineering students
+        awarder: Isfahan University of Technology
+        date: 2023
 
-      - title: Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt
-        authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1905-03-18
-        url: https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt
-        summary: In the second paper, he applied the quantum theory to light to explain the photoelectric effect. In particular, he used the idea of light quanta (photons) to explain experimental results, but stressed the importance of the experimental results. The importance of his work on the photoelectric effect earned him the Nobel Prize in Physics in 1921.
-
-      - title: Die Grundlage der allgemeinen Relativitätstheorie
-        authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1916-03-20
-        url: https://de.wikisource.org/wiki/Die_Grundlage_der_allgemeinen_Relativitätstheorie
-        summary: The publication of the theory of general relativity made him internationally famous. He was professor of physics at the universities of Zurich (1909–1911) and Prague (1911–1912), before he returned to ETH Zurich (1912–1914).
+      - title: 2nd place, Rahneshan Tournament (exhaust heat recovery design)
+        awarder: Rahneshan Tournament
+        date: 2021
 
     Skills:
-      - name: Physics
-        level: Master
-        icon: fa-solid fa-hashtag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
+      - name: Programming
+        keywords: "MATLAB (MPT Academy, high intermediate), EES (professional), Python, C/C++"
+
+      - name: CFD and Simulation
+        keywords: "Ansys Fluent, SpaceClaim, Meshing, ICM, CFD-Post, DesignModeler, UDF coding, STAR-CCM+, Aspen-HTRI"
+
+      - name: CAD
+        keywords: "SolidWorks (certified, Iran TVTO), CATIA (certified), Inventor, AutoCAD"
+
+      - name: Hands-on
+        keywords: "Welding and visual testing (VT), turning machine operation, laser cutting, Arduino programming"
 
     Languages:
-      - name: German
+      - name: Persian
         summary: "Native speaker"
 
       - name: English
-        summary: "Fluent"
-
-    Interests:
-      - name: Physics
-        icon: fa-solid fa-tag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
-
-    Certificates:
-      - name: Machine Learning
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-location-dot
-
-      - name: Quantum Computing
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-tag
-
-      - name: Quantum Information
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-envelope
-
-    Projects:
-      - name: Quantum Computing
-        summary: Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.
-        highlights:
-          - Quantum Teleportation
-          - Quantum Cryptography
-        start_date: 2018-01-01
-        end_date: 2018-01-01
-
-    References:
-      - name: Professor John Doe
-        icon: fa-solid fa-laptop
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
-
-      - name: Professor Jane Smith
-        icon: fa-solid fa-thumbtack
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
+        summary: "High intermediate"
