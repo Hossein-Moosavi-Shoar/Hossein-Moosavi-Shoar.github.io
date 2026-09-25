@@ -69,3 +69,7 @@ h1, h2, h3, h4, h5, h6, .navbar { text-align: left; }
 
 /* Back-to-top button styling already in theme; make news scroll area smoother */
 .scrollspy { scroll-behavior: smooth; }
+
+/* Profile photo crossfade */
+.profile { position: relative; }
+.profile img { display: block; }
