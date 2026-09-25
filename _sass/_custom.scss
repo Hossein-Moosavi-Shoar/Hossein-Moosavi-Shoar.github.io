@@ -1,0 +1,71 @@
+
+/* ===== Custom overrides for Hossein's site ===== */
+
+/* Center the location text under the profile photo */
+.profile .more-info {
+  text-align: center;
+  width: 100%;
+}
+
+/* Justify body text across the site */
+.page-content p,
+.page-content li,
+.publications p,
+.news li,
+blockquote,
+.about p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* Keep headings/nav left-aligned */
+h1, h2, h3, h4, h5, h6, .navbar { text-align: left; }
+
+/* ===== Interactivity ===== */
+
+/* Smooth card hover lift */
+.card,
+.list-group-item {
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* Publication rows: highlight on hover */
+.publications li,
+.bibliography li {
+  transition: background-color 0.15s ease;
+  border-radius: 6px;
+}
+.publications li:hover,
+.bibliography li:hover {
+  background: rgba(13, 110, 253, 0.05);
+}
+
+/* Profile photo: subtle grow on hover */
+.profile img {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.profile img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+/* Skill keywords as pill chips */
+.CV .card, .cv .card { scroll-margin-top: 70px; }
+
+/* Fade-in on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Back-to-top button styling already in theme; make news scroll area smoother */
+.scrollspy { scroll-behavior: smooth; }
