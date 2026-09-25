@@ -50,6 +50,49 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // 2b) Floating emoji badges on the profile photo
+  const profBlock = document.querySelector(".profile");
+  if (profBlock && !profBlock.querySelector(".float-badge")) {
+    const b1 = document.createElement("div");
+    b1.className = "float-badge badge-1";
+    b1.textContent = "🔥"; // thermal engineering
+    const b2 = document.createElement("div");
+    b2.className = "float-badge badge-2";
+    b2.textContent = "⚙️";
+    profBlock.appendChild(b1);
+    profBlock.appendChild(b2);
+  }
+
+  // 2c) Animated skill bars on the CV page (.skill-item divs)
+  const skillItems = document.querySelectorAll(".skill-item");
+  if (skillItems.length) {
+    skillItems.forEach((item) => {
+      const text = item.textContent.toLowerCase();
+      let level = null;
+      if (text.includes("programming")) level = 88;        // MATLAB/EES strong
+      else if (text.includes("cfd")) level = 80;           // Fluent etc.
+      else if (text.includes("cad")) level = 78;           // SolidWorks/CATIA
+      else if (text.includes("hands-on")) level = 70;      // welding etc.
+      if (level) {
+        const bar = document.createElement("div");
+        bar.className = "skillbar";
+        bar.innerHTML = '<div class="fill" data-level="' + level + '"></div>';
+        item.appendChild(bar);
+      }
+    });
+    const barObs = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (en.isIntersecting) {
+          en.target.querySelectorAll(".fill").forEach((f) => {
+            f.style.width = f.dataset.level + "%";
+          });
+          barObs.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    skillItems.forEach((el) => barObs.observe(el));
+  }
+
   // 3) Rotating profile photo: alternate formal headshot <-> candid photo
   const profileImg = document.querySelector(".profile img");
   if (profileImg && profileImg.src) {
