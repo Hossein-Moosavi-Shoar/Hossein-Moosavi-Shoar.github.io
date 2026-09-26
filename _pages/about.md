@@ -55,18 +55,21 @@ latest_posts:
     <h3>Thermal Systems</h3>
     <p>High-temperature heat pumps, thermal cycles, energy storage, and system-level analysis.</p>
     <div class="tag-row"><span class="pill">Heat pumps</span><span class="pill">Thermodynamics</span><span class="pill">Optimization</span></div>
+    <div class="card-line"></div>
   </article>
   <article class="theme-card">
     <div class="theme-num">02</div>
     <h3>Heat Transfer &amp; Surfaces</h3>
     <p>Heat exchangers, dropwise condensation, and surface-driven enhancement of heat transfer.</p>
     <div class="tag-row"><span class="pill">Condensation</span><span class="pill">Heat exchangers</span><span class="pill">CFD</span></div>
+    <div class="card-line"></div>
   </article>
   <article class="theme-card">
     <div class="theme-num">03</div>
     <h3>Energy &amp; Water</h3>
     <p>Thermoelectric systems and atmospheric water harvesting, with a techno-economic lens.</p>
     <div class="tag-row"><span class="pill">Thermoelectric</span><span class="pill">Water harvesting</span><span class="pill">Techno-economics</span></div>
+    <div class="card-line"></div>
   </article>
 </div>
 
@@ -89,6 +92,7 @@ latest_posts:
       <p>Cycle modeling, refrigerant-property evaluation, heat-exchanger analysis, and uncertainty studies of a zeotropic cascade system with an ejector and phase separator.</p>
       <div class="tag-row"><span class="pill">MATLAB</span><span class="pill">REFPROP</span><span class="pill">Optimization</span></div>
     </div>
+    <div class="card-line"></div>
   </article>
   <article class="proj-card">
     <div class="proj-art">
@@ -101,6 +105,7 @@ latest_posts:
       <p>Beeswax nanostructured surfaces that switch behavior across solid, liquid, and transition states to enhance dropwise condensation.</p>
       <div class="tag-row"><span class="pill">Experiment</span><span class="pill">Heat transfer</span><span class="pill">Surfaces</span></div>
     </div>
+    <div class="card-line"></div>
   </article>
   <article class="proj-card">
     <div class="proj-art">
@@ -113,6 +118,7 @@ latest_posts:
       <p>Impinging-jet cooling with nanofluids, power-law boundary-layer solutions, UDF development, and custom MATLAB design tools.</p>
       <div class="tag-row"><span class="pill">Fluent</span><span class="pill">STAR-CCM+</span><span class="pill">Python</span></div>
     </div>
+    <div class="card-line"></div>
   </article>
 </div>
 
