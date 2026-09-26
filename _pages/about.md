@@ -12,13 +12,11 @@ profile:
   more_info: >
     <p>Isfahan, Iran</p>
 
-selected_papers: true
+selected_papers: false
 social: true
 
 announcements:
-  enabled: true
-  scrollable: true
-  limit: 4
+  enabled: false
 
 latest_posts:
   enabled: false
@@ -44,6 +42,10 @@ latest_posts:
   <div class="stat"><p class="stat-num">11</p><p class="stat-label">Teaching appointments</p></div>
   <div class="stat"><p class="stat-num">2</p><p class="stat-label">Universities</p></div>
 </div>
+
+## News
+
+{% include news.liquid limit=true %}
 
 ## Research
 
