@@ -80,7 +80,7 @@ h1, h2, h3, h4, h5, h6, .navbar { text-align: left; }
 /* Soft pastel gradient wash behind the homepage hero (light mode) */
 html:not(.dark) body {
   background:
-    radial-gradient(circle at center, rgba(90, 110, 140, 0.14) 1px, transparent 1.6px),
+    radial-gradient(circle at center, rgba(70, 95, 130, 0.35) 1.3px, transparent 2px),
     radial-gradient(1200px 500px at 85% -100px, rgba(255, 183, 178, 0.35), transparent 65%),
     radial-gradient(1000px 600px at -100px 200px, rgba(161, 214, 246, 0.30), transparent 60%),
     radial-gradient(900px 500px at 50% 110%, rgba(210, 227, 252, 0.28), transparent 60%),
@@ -93,8 +93,8 @@ html:not(.dark) body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: linear-gradient(to bottom, transparent 0%, var(--global-bg, #fff) 90%);
-  opacity: 0.85;
+  background: linear-gradient(to bottom, transparent 0%, var(--global-bg, #fff) 96%);
+  opacity: 0.75;
   pointer-events: none;
   z-index: -1;
 }
