@@ -858,3 +858,12 @@ html[data-theme="dark"] .icon-item:hover span { color: #25d0c4; }
   }
   .profile .more-info { margin-top: 6px; }
 }
+
+
+/* ===== Wireframe background layering ===== */
+#wireframe-bg { z-index: 0 !important; opacity: 0.9; }
+.navbar { z-index: 1030; }
+body > main, body > .page, main > .container, article, .news, .contact-split, .stats-strip {
+  position: relative;
+  z-index: 1;
+}
