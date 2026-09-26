@@ -867,3 +867,60 @@ body > main, body > .page, main > .container, article, .news, .contact-split, .s
   position: relative;
   z-index: 1;
 }
+
+
+/* ===== Readability on textured background ===== */
+/* Solid-ish surface behind free-standing text blocks */
+.hero-sub,
+.section-intro,
+.contact-lead,
+.about-lead,
+.about-text p,
+.news .table-responsive {
+  background: rgba(255, 255, 255, 0.82);
+  border-radius: 12px;
+  padding: 0.6rem 0.9rem;
+}
+html[data-theme="dark"] .hero-sub,
+html[data-theme="dark"] .section-intro,
+html[data-theme="dark"] .contact-lead,
+html[data-theme="dark"] .about-lead,
+html[data-theme="dark"] .about-text p,
+html[data-theme="dark"] .news .table-responsive {
+  background: rgba(13, 18, 24, 0.86);
+}
+
+/* Strengthen translucent card backgrounds (more opaque than glassy) */
+.card,
+.theme-card,
+.proj-card,
+.skill-card,
+.tool,
+.pub-line,
+.contact-item,
+.stat,
+.contact-box {
+  backdrop-filter: blur(6px);
+}
+html[data-theme="dark"] .card,
+html[data-theme="dark"] .theme-card,
+html[data-theme="dark"] .proj-card,
+html[data-theme="dark"] .skill-card,
+html[data-theme="dark"] .tool,
+html[data-theme="dark"] .pub-line,
+html[data-theme="dark"] .contact-item,
+html[data-theme="dark"] .stat {
+  background: rgba(16, 22, 29, 0.93) !important;
+}
+html:not([data-theme="dark"]) .card,
+html:not([data-theme="dark"]) .theme-card,
+html:not([data-theme="dark"]) .proj-card,
+html:not([data-theme="dark"]) .skill-card,
+html:not([data-theme="dark"]) .tool,
+html:not([data-theme="dark"]) .pub-line,
+html:not([data-theme="dark"]) .stat {
+  background: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Wireframe shapes slightly fainter overall — text first */
+#wireframe-bg { opacity: 0.55 !important; }
