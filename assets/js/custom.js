@@ -93,6 +93,20 @@ document.addEventListener("DOMContentLoaded", function () {
     skillItems.forEach((el) => barObs.observe(el));
   }
 
+  // 2d) Animate skill bars on homepage skills-grid too
+  const homeBars = document.querySelectorAll(".skills-grid .fill, .skill-card .fill");
+  if (homeBars.length) {
+    const hbObs = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (en.isIntersecting) {
+          en.target.style.width = en.target.dataset.level + "%";
+          hbObs.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    homeBars.forEach((el) => hbObs.observe(el));
+  }
+
   // 3) Rotating profile photo: alternate formal headshot <-> candid photo
   const profileImg = document.querySelector(".profile img");
   if (profileImg && profileImg.src) {
