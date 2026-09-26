@@ -121,69 +121,20 @@ latest_posts:
 
 ## Toolbox
 
-<div class="toolbox">
-  <div class="tool">
-    <div class="tool-head">
-      <img src="/assets/img/icons/matlab.jpg" alt="MATLAB">
-      <b>MATLAB</b>
-    </div>
-    <span>System modeling · optimization · MPT Academy</span>
-  </div>
-  <div class="tool">
-    <div class="tool-head">
-      <img src="/assets/img/icons/ees.png" alt="EES" style="object-fit:contain">
-      <img src="/assets/img/icons/refprop.png" alt="REFPROP" style="object-fit:contain">
-      <b>EES / REFPROP</b>
-    </div>
-    <span>Thermophysical properties · cycles</span>
-  </div>
-  <div class="tool">
-    <div class="tool-head">
-      <img src="/assets/img/icons/ansys.png" alt="Ansys Fluent" style="object-fit:contain">
-      <img src="/assets/img/icons/starccm.jpg" alt="STAR-CCM+" style="object-fit:contain">
-      <img src="/assets/img/icons/htri.jpg" alt="Aspen HTRI" style="object-fit:contain">
-      <b>Fluent / STAR-CCM+ / HTRI</b>
-    </div>
-    <span>CFD · UDF · conjugate heat transfer</span>
-  </div>
-  <div class="tool">
-    <div class="tool-head">
-      <img src="/assets/img/icons/python.webp" alt="Python" style="object-fit:contain">
-      <b>Python</b>
-    </div>
-    <span>Data analysis · automation</span>
-  </div>
-  <div class="tool">
-    <div class="tool-head">
-      <img src="/assets/img/icons/solidworks.jpg" alt="SolidWorks" style="object-fit:contain">
-      <img src="/assets/img/icons/catia.png" alt="CATIA" style="object-fit:contain">
-      <b>SolidWorks / CATIA</b>
-    </div>
-    <span>Certified · parts · assemblies · drawings</span>
-  </div>
-  <div class="tool">
-    <div class="tool-head">
-      <img src="/assets/img/icons/inventor.png" alt="Inventor" style="object-fit:contain">
-      <img src="/assets/img/icons/autocad.png" alt="AutoCAD" style="object-fit:contain">
-      <b>Inventor / AutoCAD</b>
-    </div>
-    <span>Drafting · 2D/3D modeling</span>
-  </div>
-  <div class="tool">
-    <div class="tool-head">
-      <img src="/assets/img/icons/arduino.png" alt="Arduino" style="object-fit:contain">
-      <b>Arduino</b>
-    </div>
-    <span>Instrumentation · test automation</span>
-  </div>
-  <div class="tool">
-    <div class="tool-head">
-      <img src="/assets/img/icons/cpp.png" alt="C++" style="object-fit:contain">
-      <img src="/assets/img/icons/c.jpg" alt="C" style="object-fit:contain">
-      <b>C / C++</b>
-    </div>
-    <span>Compiled performance code</span>
-  </div>
+<div class="icon-strip">
+  <div class="icon-item"><img src="/assets/img/icons/matlab.jpg" alt="MATLAB" title="MATLAB"><span>MATLAB</span></div>
+  <div class="icon-item"><img src="/assets/img/icons/ees.png" alt="EES" title="EES" style="object-fit:contain"><span>EES</span></div>
+  <div class="icon-item"><img src="/assets/img/icons/refprop.png" alt="REFPROP" title="REFPROP" style="object-fit:contain"><span>REFPROP</span></div>
+  <div class="icon-item"><img src="/assets/img/icons/ansys.png" alt="Ansys Fluent" title="Ansys Fluent" style="object-fit:contain"><span>Fluent</span></div>
+  <div class="icon-item"><img src="/assets/img/icons/starccm.jpg" alt="STAR-CCM+" title="STAR-CCM+" style="object-fit:contain"><span>STAR-CCM+</span></div>
+  <div class="icon-item"><img src="/assets/img/icons/htri.jpg" alt="Aspen HTRI" title="Aspen HTRI" style="object-fit:contain"><span>Aspen HTRI</span></div>
+  <div class="icon-item"><img src="/assets/img/icons/python.webp" alt="Python" title="Python" style="object-fit:contain"><span>Python</span></div>
+  <div class="icon-item"><img src="/assets/img/icons/solidworks.jpg" alt="SolidWorks" title="SolidWorks" style="object-fit:contain"><span>SolidWorks</span></div>
+  <div class="icon-item"><img src="/assets/img/icons/catia.png" alt="CATIA" title="CATIA" style="object-fit:contain"><span>CATIA</span></div>
+  <div class="icon-item"><img src="/assets/img/icons/inventor.png" alt="Inventor" title="Inventor" style="object-fit:contain"><span>Inventor</span></div>
+  <div class="icon-item"><img src="/assets/img/icons/autocad.png" alt="AutoCAD" title="AutoCAD" style="object-fit:contain"><span>AutoCAD</span></div>
+  <div class="icon-item"><img src="/assets/img/icons/arduino.png" alt="Arduino" title="Arduino" style="object-fit:contain"><span>Arduino</span></div>
+  <div class="icon-item"><img src="/assets/img/icons/cpp.png" alt="C++" title="C++" style="object-fit:contain"><span>C++</span></div>
 </div>
 
 ## Selected Publications

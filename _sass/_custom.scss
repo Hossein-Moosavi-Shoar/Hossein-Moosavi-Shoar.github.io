@@ -792,3 +792,63 @@ html[data-theme="dark"] .skill-icons img {
 }
 html[data-theme="dark"] .tool-head img { background: #e8edf2; }
 .tool-head b { font-size: 0.92rem; line-height: 1.2; }
+
+
+/* ===== Toolbox: flat centered icon strip ===== */
+.icon-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.1rem 2.4rem;
+  margin: 1.6rem 0 2.4rem;
+  padding: 1.4rem 1rem;
+}
+.icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+  width: 72px;
+}
+.icon-item img {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  border-radius: 10px;
+  background: #fff;
+  border: 1px solid rgba(120, 130, 150, 0.22);
+  padding: 4px;
+  filter: grayscale(0.55);
+  opacity: 0.82;
+  transition: all 0.25s ease;
+}
+/* contain-fit logos (pngs with whitespace) look better slightly smaller */
+.icon-item img[style*="contain"] {
+  width: 46px;
+  height: 46px;
+  padding: 6px;
+}
+.icon-item:hover img {
+  filter: grayscale(0);
+  opacity: 1;
+  transform: translateY(-4px) scale(1.07);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.22);
+  border-color: rgba(59, 130, 246, 0.5);
+}
+.icon-item span {
+  font-size: 0.72rem;
+  color: var(--global-text-color-muted, #666);
+  text-align: center;
+  line-height: 1.2;
+}
+.icon-item:hover span { color: var(--global-text-color, #333); }
+html[data-theme="dark"] .icon-item img {
+  background: #e8edf2;
+  border-color: rgba(255,255,255,0.14);
+}
+html[data-theme="dark"] .icon-item:hover img {
+  box-shadow: 0 8px 20px rgba(37, 208, 196, 0.3);
+  border-color: rgba(37, 208, 196, 0.6);
+}
+html[data-theme="dark"] .icon-item span { color: #9ba8b5; }
+html[data-theme="dark"] .icon-item:hover span { color: #25d0c4; }
