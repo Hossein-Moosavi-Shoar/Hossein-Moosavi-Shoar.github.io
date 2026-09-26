@@ -50,19 +50,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // 2b) Floating emoji badges on the profile photo
-  const profBlock = document.querySelector(".profile");
-  if (profBlock && !profBlock.querySelector(".float-badge")) {
-    const b1 = document.createElement("div");
-    b1.className = "float-badge badge-1";
-    b1.textContent = "🔥"; // thermal engineering
-    const b2 = document.createElement("div");
-    b2.className = "float-badge badge-2";
-    b2.textContent = "⚙️";
-    profBlock.appendChild(b1);
-    profBlock.appendChild(b2);
-  }
-
   // 2c) Animated skill bars on the CV page (.skill-item divs)
   const skillItems = document.querySelectorAll(".skill-item");
   if (skillItems.length) {

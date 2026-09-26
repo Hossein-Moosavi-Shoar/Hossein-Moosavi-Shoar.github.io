@@ -165,26 +165,6 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb {
   border-radius: 10px;
 }
 
-/* Floating emoji badges on the profile photo */
-.profile .float-badge {
-  position: absolute;
-  background: #fff;
-  border-radius: 14px;
-  padding: 6px 10px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
-  font-size: 1.4rem;
-  line-height: 1;
-  animation: floaty 4s ease-in-out infinite;
-  z-index: 5;
-}
-html[data-theme="dark"] .profile .float-badge { background: #2a2a2a; }
-.profile .float-badge.badge-1 { top: -14px; right: -14px; }
-.profile .float-badge.badge-2 { bottom: -14px; left: -14px; animation-duration: 5s; }
-@keyframes floaty {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
-
 /* Skill level bars (CV page) */
 .skillbar {
   width: 100%;
@@ -852,3 +832,17 @@ html[data-theme="dark"] .icon-item:hover img {
 }
 html[data-theme="dark"] .icon-item span { color: #9ba8b5; }
 html[data-theme="dark"] .icon-item:hover span { color: #25d0c4; }
+
+
+/* Mobile: profile block centered + tight spacing so hero flows naturally */
+@media (max-width: 768px) {
+  .profile {
+    float: none !important;
+    margin: 0 auto 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 55%;
+  }
+  .profile .more-info { margin-top: 6px; }
+}
