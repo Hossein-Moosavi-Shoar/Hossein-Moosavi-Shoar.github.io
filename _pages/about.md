@@ -175,4 +175,91 @@ latest_posts:
       <a class="btn-cta" href="https://www.linkedin.com/in/hosseinmoosavii/" target="_blank" rel="noopener">LinkedIn ↗</a>
     </div>
   </div>
+</div>## My Skills
+
+<div class="skills-grid">
+  <div class="skill-card">
+    <div class="skill-icons">
+      <img src="/assets/img/icons/matlab.jpg" alt="MATLAB" title="MATLAB">
+      <img src="/assets/img/icons/ees.png" alt="EES" title="EES">
+      <img src="/assets/img/icons/refprop.png" alt="REFPROP" title="REFPROP">
+    </div>
+    <h4>MATLAB &amp; EES &amp; REFPROP</h4>
+    <p>System modeling, semi-analytical solvers, thermodynamic cycles — educated at MPT Academy, professional EES.</p>
+    <div class="skillbar"><div class="fill" data-level="90"></div></div>
+  </div>
+  <div class="skill-card">
+    <div class="skill-icons">
+      <img src="/assets/img/icons/ansys.png" alt="Ansys Fluent" title="Ansys Fluent">
+      <img src="/assets/img/icons/starccm.jpg" alt="STAR-CCM+" title="STAR-CCM+">
+      <img src="/assets/img/icons/htri.jpg" alt="Aspen HTRI" title="Aspen HTRI">
+    </div>
+    <h4>CFD &amp; Thermal Simulation</h4>
+    <p>Fluent, STAR-CCM+, Aspen-HTRI: conjugate heat transfer, UDF coding, meshing, post-processing.</p>
+    <div class="skillbar"><div class="fill" data-level="80"></div></div>
+  </div>
+  <div class="skill-card">
+    <div class="skill-icons">
+      <img src="/assets/img/icons/solidworks.jpg" alt="SolidWorks" title="SolidWorks">
+      <img src="/assets/img/icons/catia.png" alt="CATIA" title="CATIA">
+      <img src="/assets/img/icons/inventor.png" alt="Inventor" title="Inventor">
+      <img src="/assets/img/icons/autocad.png" alt="AutoCAD" title="AutoCAD">
+    </div>
+    <h4>CAD</h4>
+    <p>Certified mechanical design: parts, assemblies, and technical drawings (Iran TVTO certified).</p>
+    <div class="skillbar"><div class="fill" data-level="78"></div></div>
+  </div>
+  <div class="skill-card">
+    <div class="skill-icons">
+      <img src="/assets/img/icons/python.webp" alt="Python" title="Python">
+      <img src="/assets/img/icons/arduino.png" alt="Arduino" title="Arduino">
+      <img src="/assets/img/icons/cpp.png" alt="C++" title="C++">
+      <img src="/assets/img/icons/c.jpg" alt="C" title="C">
+    </div>
+    <h4>Python, Arduino &amp; C/C++</h4>
+    <p>Data reduction, test-stand automation, and quick engineering tools.</p>
+    <div class="skillbar"><div class="fill" data-level="55"></div></div>
+  </div>
+</div>
+
+## Selected Publications
+
+<div class="pub-brief">
+  <div class="pub-line">
+    <span class="pub-year">2026</span>
+    <div>
+      <p class="pub-title">Thermo-responsive nanostructured surface: beeswax for enhanced condensation performance</p>
+      <p class="pub-venue">Applied Surface Science Advances · <a href="https://doi.org/10.1016/j.apsadv.2026.100936" target="_blank" rel="noopener">doi:10.1016/j.apsadv.2026.100936</a></p>
+    </div>
+  </div>
+  <div class="pub-line">
+    <span class="pub-year">2024</span>
+    <div>
+      <p class="pub-title">Thermo-economic analysis of thermoelectric-based atmospheric water harvesters</p>
+      <p class="pub-venue">Int. J. of Fluid Flow and Thermal Sciences · <a href="https://doi.org/10.1016/j.ijft.2024.100740" target="_blank" rel="noopener">doi:10.1016/j.ijft.2024.100740</a></p>
+    </div>
+  </div>
+</div>
+
+<p><a class="btn-cta" href="/publications/">View all publications →</a></p>
+
+## Get in Touch
+
+<div class="contact-split">
+  <div>
+    <p class="about-lead">Exploring PhD opportunities in thermal and energy systems.</p>
+    <p>
+      If your group works on thermal systems, heat transfer, computational modeling, or energy
+      conversion, I would be glad to discuss potential research directions.
+    </p>
+  </div>
+  <div class="contact-box">
+    <p class="kicker">Get in touch</p>
+    <p class="big-email"><a href="mailto:shm137932@gmail.com">shm137932@gmail.com</a></p>
+    <p class="muted-line">Isfahan, Iran</p>
+    <div class="cta-row">
+      <a class="btn-cta primary" href="mailto:shm137932@gmail.com">Email me</a>
+      <a class="btn-cta" href="https://www.linkedin.com/in/hosseinmoosavii/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+  </div>
 </div>
