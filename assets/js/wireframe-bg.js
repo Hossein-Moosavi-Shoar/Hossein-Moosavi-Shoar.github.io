@@ -1,5 +1,6 @@
-// Wireframe background — compressor wheel (real CAD model, STL-derived wireframe)
-// Original model: Compressorwheel.STL (turbocharger impeller), decimated to 10k verts / 26k edges.
+// Compressor wheel 3D background v2
+// - real STL surface (semi-transparent) + feature edges (not hollow triangle soup)
+// - hero-prominent, recedes into background on scroll
 (function () {
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   if (!window.location.pathname.match(/^\/?$|^\/index\.html?$/)) return;
@@ -7,15 +8,15 @@
   function themeColors() {
     const dark = document.documentElement.getAttribute("data-theme") === "dark";
     return dark
-      ? { wire: 0x25d0c4, opacity: 0.34 }
-      : { wire: 0x3b82f6, opacity: 0.30 };
+      ? { surface: 0x0e2a30, edge: 0x25d0c4, surfOp: 0.55, edgeOp: 0.85 }
+      : { surface: 0xdceafb, edge: 0x3b82f6, surfOp: 0.72, edgeOp: 0.8 };
   }
 
-  function start(THREE, data) {
+  function start(THREE, geo) {
     const canvas = document.createElement("canvas");
     canvas.id = "wireframe-bg";
     canvas.style.cssText =
-      "position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0.55;";
+      "position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0.8;";
     document.body.appendChild(canvas);
 
     const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
@@ -24,28 +25,65 @@
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
-      40, window.innerWidth / window.innerHeight, 0.1, 100
+      38, window.innerWidth / window.innerHeight, 0.1, 100
     );
-    camera.position.set(0, 0, 5.2);
+    camera.position.set(0, 0.4, 6);
+
+    // group holds the whole model so we scale/position once
+    const group = new THREE.Group();   // tilt + wobble + scroll placement
+    const spinner = new THREE.Group(); // spins on the wheel axis (z)
+    group.add(spinner);
+    scene.add(group);
 
     const col = themeColors();
 
-    // build LineSegments from the STL-derived wireframe
-    const positions = new Float32Array(data.e.length * 6);
-    for (let i = 0; i < data.e.length; i++) {
-      const a = data.v[data.e[i][0]], b = data.v[data.e[i][1]];
-      positions.set([a[0], a[1], a[2], b[0], b[1], b[2]], i * 6);
-    }
-    const geo = new THREE.BufferGeometry();
-    geo.setAttribute("position", new THREE.BufferAttribute(positions, 3));
-    const mat = new THREE.LineBasicMaterial({ color: col.wire, transparent: true, opacity: col.opacity });
-    const wheel = new THREE.LineSegments(geo, mat);
-    wheel.scale.setScalar(3.1);
-    wheel.rotation.x = 0.5; // tilt to show the blade curvature
-    scene.add(wheel);
+    // --- solid surface (semi-transparent, doubleside) ---
+    const surfGeo = geo;
+    surfGeo.computeVertexNormals();
+    // normalize: center + fit
+    surfGeo.computeBoundingBox();
+    const bb = surfGeo.boundingBox;
+    const c = new THREE.Vector3(); bb.getCenter(c);
+    const size = new THREE.Vector3(); bb.getSize(size);
+    const s = 3.4 / Math.max(size.x, size.y, size.z);
+    surfGeo.translate(-c.x, -c.y, -c.z);
+    surfGeo.scale(s, s, s);
 
-    // slow spin around the wheel's own axis + gentle wobble
-    let mx = 0, my = 0;
+    const surfMat = new THREE.MeshLambertMaterial({
+      color: col.surface,
+      transparent: true,
+      opacity: col.surfOp,
+      side: THREE.DoubleSide,
+      depthWrite: false,
+    });
+    const surface = new THREE.Mesh(surfGeo, surfMat);
+    spinner.add(surface);
+
+    // --- feature edges only (blade contours, hub) — crisp CAD look ---
+    const edgeGeo = new THREE.EdgesGeometry(surfGeo, 28); // 28° threshold
+    const edgeMat = new THREE.LineBasicMaterial({
+      color: col.edge, transparent: true, opacity: col.edgeOp,
+    });
+    const edges = new THREE.LineSegments(edgeGeo, edgeMat);
+    spinner.add(edges);
+
+    // lighting for the shaded surface
+    scene.add(new THREE.AmbientLight(0xffffff, 0.7));
+    const key = new THREE.DirectionalLight(0xffffff, 0.6);
+    key.position.set(4, 6, 8);
+    scene.add(key);
+
+    // --- state: hero-prominent, recedes on scroll ---
+    let scrollT = 0; // 0 at top, 1 after ~1.5 viewport heights
+    function updateScroll() {
+      const vh = window.innerHeight;
+      scrollT = Math.min(1, window.scrollY / (vh * 1.4));
+    }
+    window.addEventListener("scroll", updateScroll, { passive: true });
+    updateScroll();
+
+    // interaction
+    let mx = 0, my = 0, paused = false;
     window.addEventListener("mousemove", function (e) {
       mx = (e.clientX / window.innerWidth - 0.5) * 2;
       my = (e.clientY / window.innerHeight - 0.5) * 2;
@@ -59,27 +97,40 @@
       renderer.setSize(window.innerWidth, window.innerHeight);
     });
 
-    let paused = false;
     const clock = new THREE.Clock();
     function animate() {
       requestAnimationFrame(animate);
       if (paused) return;
       const t = clock.getElapsedTime();
-      wheel.rotation.z = t * 0.1;          // slow spin like a real compressor wheel
-      wheel.rotation.x = 0.5 + Math.sin(t * 0.25) * 0.15;
-      wheel.rotation.y = Math.cos(t * 0.2) * 0.25;
-      camera.position.x = mx * 0.5;
-      camera.position.y = -my * 0.35;
+
+      // outer group: tilt the wheel axis toward the viewer + wobble
+      group.rotation.x = 1.05;
+      group.rotation.y = Math.sin(t * 0.18) * 0.3;
+      // inner group: the actual spin on the wheel axis
+      spinner.rotation.z = t * 0.12;
+
+      // scroll: fade back + drift up + shrink into a background ornament
+      const ease = scrollT * scrollT;
+      group.position.x = 2.6 * ease * (mx > 0 ? 1 : 1); // drift right as it recedes
+      group.position.y = 1.6 * ease;
+      group.scale.setScalar(1 - 0.55 * ease);
+      canvas.style.opacity = String(0.8 - 0.45 * ease);
+
+      // mouse parallax on camera
+      camera.position.x = mx * 0.5 * (1 - ease * 0.6);
+      camera.position.y = 0.4 - my * 0.3 * (1 - ease * 0.6);
       camera.lookAt(0, 0, 0);
       renderer.render(scene, camera);
     }
     animate();
 
-    // re-color on theme toggle
+    // theme re-color
     new MutationObserver(function () {
-      const c = themeColors();
-      mat.color.setHex(c.wire);
-      mat.opacity = c.opacity;
+      const c2 = themeColors();
+      surfMat.color.setHex(c2.surface);
+      surfMat.opacity = c2.surfOp;
+      edgeMat.color.setHex(c2.edge);
+      edgeMat.opacity = c2.edgeOp;
     }).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
   }
 
@@ -91,13 +142,13 @@
     const check = setInterval(function () {
       if (typeof THREE !== "undefined") {
         clearInterval(check);
-        fetch("/assets/js/compressorwheel.json")
-          .then(function (r) { return r.json(); })
-          .then(function (data) { start(THREE, data); })
-          .catch(function () {});
+        const loader = new THREE.STLLoader();
+        loader.load("/assets/js/compressorwheel.stl", function (geo) {
+          start(THREE, geo);
+        });
       }
     }, 100);
-    setTimeout(function () { clearInterval(check); }, 10000);
+    setTimeout(function () { clearInterval(check); }, 12000);
   }
   boot();
 })();
