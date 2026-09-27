@@ -1,4 +1,4 @@
-// Dual-model 3D background: jet engine (hero) -> compressor wheel (deep background)
+// 3D background: compressor wheel + accent hexagon
 (function () {
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   if (!window.location.pathname.match(/^\/?$|^\/index\.html?$/)) return;
@@ -6,11 +6,13 @@
   function themeColors() {
     const dark = document.documentElement.getAttribute("data-theme") === "dark";
     return dark
-      ? { surface: 0x0e2a30, edge: 0x25d0c4, surfOp: 0.5, edgeOp: 0.8 }
-      : { surface: 0xdceafb, edge: 0x3b82f6, surfOp: 0.68, edgeOp: 0.75 };
+      ? { surface: 0x0e2a30, edge: 0x25d0c4, surfOp: 0.5, edgeOp: 0.8,
+          hexSurf: 0x3a2418, hexEdge: 0xff9b52 }
+      : { surface: 0xdceafb, edge: 0x3b82f6, surfOp: 0.68, edgeOp: 0.75,
+          hexSurf: 0xf3e3d3, hexEdge: 0xff9b52 };
   }
 
-  function start(THREE, jetGeo, wheelGeo) {
+  function start(THREE, wheelGeo) {
     const canvas = document.createElement("canvas");
     canvas.id = "wireframe-bg";
     canvas.style.cssText =
@@ -39,47 +41,45 @@
       return geo;
     }
 
-    function buildModel(geo, fit) {
-      geo = prep(geo, fit);
-      const g = new THREE.Group();
-      const surfMat = new THREE.MeshLambertMaterial({
-        color: col.surface, transparent: true, opacity: col.surfOp,
-        side: THREE.DoubleSide, depthWrite: false,
-      });
-      g.add(new THREE.Mesh(geo, surfMat));
-      const edgeMat = new THREE.LineBasicMaterial({
-        color: col.edge, transparent: true, opacity: col.edgeOp,
-      });
-      g.add(new THREE.LineSegments(new THREE.EdgesGeometry(geo, 30), edgeMat));
-      return { group: g, surfMat, edgeMat };
-    }
+    // ---- compressor wheel (hero centerpiece) ----
+    wheelGeo = prep(wheelGeo, 3.2);
+    const wheelGroup = new THREE.Group();
+    const spinner = new THREE.Group();
+    wheelGroup.add(spinner);
+    const surfMat = new THREE.MeshLambertMaterial({
+      color: col.surface, transparent: true, opacity: col.surfOp,
+      side: THREE.DoubleSide, depthWrite: false,
+    });
+    spinner.add(new THREE.Mesh(wheelGeo, surfMat));
+    const edgeMat = new THREE.LineBasicMaterial({
+      color: col.edge, transparent: true, opacity: col.edgeOp,
+    });
+    spinner.add(new THREE.LineSegments(new THREE.EdgesGeometry(wheelGeo, 28), edgeMat));
+    wheelGroup.rotation.x = 1.05; // show nose + blades
+    scene.add(wheelGroup);
 
-    const jet = buildModel(jetGeo, 3.6);
-    const wheel = buildModel(wheelGeo, 2.6);
-    scene.add(jet.group);
-    scene.add(wheel.group);
+    // ---- accent hexagon (hexagonal prism), different color, near the wheel ----
+    const hexGroup = new THREE.Group();
+    const hexGeo = new THREE.CylinderGeometry(0.85, 0.85, 0.35, 6); // hexagonal prism
+    const hexSurfMat = new THREE.MeshLambertMaterial({
+      color: col.hexSurf, transparent: true, opacity: 0.35,
+      side: THREE.DoubleSide, depthWrite: false,
+    });
+    hexGroup.add(new THREE.Mesh(hexGeo, hexSurfMat));
+    const hexEdgeMat = new THREE.LineBasicMaterial({
+      color: col.hexEdge, transparent: true, opacity: 0.9,
+    });
+    hexGroup.add(new THREE.LineSegments(new THREE.EdgesGeometry(hexGeo), hexEdgeMat));
+    hexGroup.position.set(-2.7, 0.9, -1.5); // upper-left of the wheel
+    hexGroup.rotation.set(0.5, 0.6, 0.2);
+    scene.add(hexGroup);
 
-    // ---- choreography state ----
-    // jet: hero centerpiece; scrolls DOWN away (fast)
-    // wheel: starts above/off; descends into place later (slower), then stays as bg
     scene.add(new THREE.AmbientLight(0xffffff, 0.7));
     const key = new THREE.DirectionalLight(0xffffff, 0.6);
     key.position.set(4, 6, 8);
     scene.add(key);
 
-    // orientation
-    jet.group.rotation.z = -0.15;
-    jet.group.rotation.y = 0.4;
-    // wheel: tilt to show the nose/blades
-    wheel.group.rotation.x = 1.05;
-
-    let scrollT = 0;
-    function updateScroll() {
-      scrollT = Math.min(1, window.scrollY / (window.innerHeight * 2.2));
-    }
-    window.addEventListener("scroll", updateScroll, { passive: true });
-    updateScroll();
-
+    // motion: wheel spins on axis; hexagon tumbles slowly; mouse parallax
     let mx = 0, my = 0, paused = false;
     window.addEventListener("mousemove", function (e) {
       mx = (e.clientX / window.innerWidth - 0.5) * 2;
@@ -93,39 +93,15 @@
     });
 
     const clock = new THREE.Clock();
-    let yaw = 0.4;
-    function clamp01(x) { return Math.max(0, Math.min(1, x)); }
-
     function animate() {
       requestAnimationFrame(animate);
       if (paused) return;
       const t = clock.getElapsedTime();
-
-      // --- jet engine: visible in hero (scrollT 0), exits downward by scrollT ~0.45 (fast) ---
-      const jetExit = clamp01(scrollT / 0.45);
-      const jetEase = jetExit * jetExit;
-      jet.group.position.y = -jetEase * 5.5;              // moves DOWN off-screen
-      jet.group.position.x = yaw * 0;
-      jet.group.visible = jetEase < 0.999;
-      jet.group.traverse(function (o) {
-        if (o.material) o.material.opacity = (o.material.type === "LineBasicMaterial" ? col.edgeOp : col.surfOp) * (1 - jetEase);
-      });
-      yaw += 0.0018;
-      jet.group.rotation.y = yaw;
-      jet.group.position.y += Math.sin(t * 0.4) * 0.08;   // hover bob
-
-      // --- compressor wheel: enters later (scrollT 0.35 -> 1.0), slower, then lingers as bg ---
-      const wheelIn = clamp01((scrollT - 0.35) / 0.65);
-      const wheelEase = wheelIn * wheelIn * (3 - 2 * wheelIn); // smoothstep
-      wheel.group.position.y = 4.5 - wheelEase * 4.7;     // descends from above into place
-      wheel.group.position.x = 2.2 * wheelEase;           // settles to the right side
-      wheel.group.visible = wheelIn > 0.001;
-      wheel.group.traverse(function (o) {
-        if (o.material) o.material.opacity = (o.material.type === "LineBasicMaterial" ? col.edgeOp : col.surfOp) * wheelEase * 0.75;
-      });
-      wheel.group.rotation.z = t * 0.1;                   // slow spin
-
-      // mouse parallax (light)
+      spinner.rotation.z = t * 0.12;                       // wheel spin
+      hexGroup.rotation.x = 0.5 + t * 0.1;                 // slow tumble
+      hexGroup.rotation.y = 0.6 + t * 0.14;
+      hexGroup.position.y = 0.9 + Math.sin(t * 0.6) * 0.12; // float
+      wheelGroup.position.y = Math.sin(t * 0.4) * 0.06;
       camera.position.x = mx * 0.4;
       camera.position.y = 0.6 - my * 0.25;
       camera.lookAt(0, 0, 0);
@@ -136,12 +112,11 @@
     // theme re-color
     new MutationObserver(function () {
       const c2 = themeColors();
-      [jet, wheel].forEach(function (m) {
-        m.surfMat.color.setHex(c2.surface);
-        m.surfMat.opacity = c2.surfOp;
-        m.edgeMat.color.setHex(c2.edge);
-        m.edgeMat.opacity = c2.edgeOp;
-      });
+      surfMat.color.setHex(c2.surface);
+      surfMat.opacity = c2.surfOp;
+      edgeMat.color.setHex(c2.edge);
+      hexSurfMat.color.setHex(c2.hexSurf);
+      hexEdgeMat.color.setHex(c2.hexEdge);
     }).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
   }
 
@@ -153,15 +128,12 @@
     const check = setInterval(function () {
       if (typeof THREE !== "undefined") {
         clearInterval(check);
-        const loader = new THREE.STLLoader();
-        loader.load("/assets/js/jetengine.stl", function (jetGeo) {
-          loader.load("/assets/js/compressorwheel.stl", function (wheelGeo) {
-            start(THREE, jetGeo, wheelGeo);
-          });
+        new THREE.STLLoader().load("/assets/js/compressorwheel.stl", function (geo) {
+          start(THREE, geo);
         });
       }
     }, 100);
-    setTimeout(function () { clearInterval(check); }, 15000);
+    setTimeout(function () { clearInterval(check); }, 12000);
   }
   boot();
 })();
