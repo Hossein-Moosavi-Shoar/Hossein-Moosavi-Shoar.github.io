@@ -182,10 +182,10 @@ cv:
 
     Skills:
       - name: Programming
-        keywords: "MATLAB (MPT Academy, high intermediate), EES (professional), Python, C/C++"
+        keywords: "MATLAB (MPT Academy, high intermediate), EES (professional), Python, C/C++, COMSOL Multiphysics"
 
       - name: CFD and Simulation
-        keywords: "Ansys Fluent, SpaceClaim, Meshing, ICM, CFD-Post, DesignModeler, UDF coding, STAR-CCM+, Aspen-HTRI"
+        keywords: "Ansys Fluent, SpaceClaim, Meshing, ICM, CFD-Post, DesignModeler, UDF coding, STAR-CCM+, Aspen-HTRI, COMSOL, Carrier HAP e-Design"
 
       - name: CAD
         keywords: "SolidWorks (certified, Iran TVTO), CATIA (certified), Inventor, AutoCAD"

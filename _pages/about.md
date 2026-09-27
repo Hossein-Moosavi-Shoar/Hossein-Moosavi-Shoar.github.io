@@ -137,6 +137,8 @@ latest_posts:
   <div class="icon-item"><img src="/assets/img/icons/autocad.png" alt="AutoCAD" title="AutoCAD" style="object-fit:contain"><span>AutoCAD</span></div>
   <div class="icon-item"><img src="/assets/img/icons/arduino.png" alt="Arduino" title="Arduino" style="object-fit:contain"><span>Arduino</span></div>
   <div class="icon-item"><img src="/assets/img/icons/cpp.png" alt="C++" title="C++" style="object-fit:contain"><span>C++</span></div>
+  <div class="icon-item"><img src="/assets/img/icons/comsol.jpg" alt="COMSOL" title="COMSOL Multiphysics" style="object-fit:contain"><span>COMSOL</span></div>
+  <div class="icon-item"><img src="/assets/img/icons/carrier_hap.webp" alt="Carrier HAP" title="Carrier HAP e-Design" style="object-fit:contain"><span>Carrier HAP</span></div>
 </div>
 
 ## Selected Publications
