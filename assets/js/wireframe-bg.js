@@ -6,10 +6,8 @@
   function themeColors() {
     const dark = document.documentElement.getAttribute("data-theme") === "dark";
     return dark
-      ? { surface: 0x0e2a30, edge: 0x25d0c4, surfOp: 0.5, edgeOp: 0.8,
-          hexSurf: 0x3a2418, hexEdge: 0xff9b52 }
-      : { surface: 0xdceafb, edge: 0x3b82f6, surfOp: 0.68, edgeOp: 0.75,
-          hexSurf: 0xf3e3d3, hexEdge: 0xff9b52 };
+      ? { surface: 0x0e2a30, edge: 0x25d0c4, surfOp: 0.5, edgeOp: 0.8 }
+      : { surface: 0xdceafb, edge: 0x3b82f6, surfOp: 0.68, edgeOp: 0.75 };
   }
 
   function start(THREE, wheelGeo) {
@@ -58,21 +56,6 @@
     wheelGroup.rotation.x = 1.05; // show nose + blades
     scene.add(wheelGroup);
 
-    // ---- accent hexagon (hexagonal prism), different color, near the wheel ----
-    const hexGroup = new THREE.Group();
-    const hexGeo = new THREE.CylinderGeometry(0.85, 0.85, 0.35, 6); // hexagonal prism
-    const hexSurfMat = new THREE.MeshLambertMaterial({
-      color: col.hexSurf, transparent: true, opacity: 0.35,
-      side: THREE.DoubleSide, depthWrite: false,
-    });
-    hexGroup.add(new THREE.Mesh(hexGeo, hexSurfMat));
-    const hexEdgeMat = new THREE.LineBasicMaterial({
-      color: col.hexEdge, transparent: true, opacity: 0.9,
-    });
-    hexGroup.add(new THREE.LineSegments(new THREE.EdgesGeometry(hexGeo), hexEdgeMat));
-    hexGroup.position.set(-2.7, 0.9, -1.5); // upper-left of the wheel
-    hexGroup.rotation.set(0.5, 0.6, 0.2);
-    scene.add(hexGroup);
 
     scene.add(new THREE.AmbientLight(0xffffff, 0.7));
     const key = new THREE.DirectionalLight(0xffffff, 0.6);
@@ -98,9 +81,6 @@
       if (paused) return;
       const t = clock.getElapsedTime();
       spinner.rotation.z = t * 0.12;                       // wheel spin
-      hexGroup.rotation.x = 0.5 + t * 0.1;                 // slow tumble
-      hexGroup.rotation.y = 0.6 + t * 0.14;
-      hexGroup.position.y = 0.9 + Math.sin(t * 0.6) * 0.12; // float
       wheelGroup.position.y = Math.sin(t * 0.4) * 0.06;
       camera.position.x = mx * 0.4;
       camera.position.y = 0.6 - my * 0.25;
@@ -115,8 +95,6 @@
       surfMat.color.setHex(c2.surface);
       surfMat.opacity = c2.surfOp;
       edgeMat.color.setHex(c2.edge);
-      hexSurfMat.color.setHex(c2.hexSurf);
-      hexEdgeMat.color.setHex(c2.hexEdge);
     }).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
   }
 
