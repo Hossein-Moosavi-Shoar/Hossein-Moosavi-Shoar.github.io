@@ -21,7 +21,6 @@ latest_posts:
   enabled: false
 ---
 
-<p class="hero-name">Hossein <span class="grad">Moosavi Shoa'r</span></p>
 <p class="hero-role">M.Sc. candidate in Energy Conversion at <a href="https://en.sharif.edu" target="_blank" rel="noopener">Sharif University of Technology</a></p>
 
 <h1 class="hero-lead">Building things that
