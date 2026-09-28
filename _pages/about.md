@@ -2,8 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: >
-  M.Sc. candidate in Energy Conversion at <a href='https://en.sharif.edu'>Sharif University of Technology</a>.
+subtitle: ""
 
 profile:
   align: right
@@ -23,7 +22,7 @@ latest_posts:
 ---
 
 <p class="hero-name">Hossein <span class="grad">Moosavi Shoa'r</span></p>
-<p class="hero-role">M.Sc. candidate in Energy Conversion at Sharif University of Technology</p>
+<p class="hero-role">M.Sc. candidate in Energy Conversion at <a href="https://en.sharif.edu" target="_blank" rel="noopener">Sharif University of Technology</a></p>
 
 <h1 class="hero-lead">Building things that
 <em>measure, move<br>&amp; convert energy.</em></h1>

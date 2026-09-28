@@ -927,7 +927,7 @@ html:not([data-theme="dark"]) .stat {
 
 
 /* ===== Premium dark engineering hero ===== */
-.about .post-header, .about h1#h1 { display: none; } /* hide default title if duplicated */
+.about .post-header { display: none; } /* name+subtitle shown in custom hero instead */
 
 /* Name + role */
 .hero-name {
