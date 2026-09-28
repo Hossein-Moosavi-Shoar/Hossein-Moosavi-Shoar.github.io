@@ -22,12 +22,17 @@ latest_posts:
   enabled: false
 ---
 
-<p class="hero-lead">Building things that <em>measure, move &amp; convert energy.</em></p>
+<p class="hero-name">Hossein <span class="grad">Moosavi Shoa'r</span></p>
+<p class="hero-role">M.Sc. candidate in Energy Conversion at Sharif University of Technology</p>
+
+<h1 class="hero-lead">Building things that
+<em>measure, move<br>&amp; convert energy.</em></h1>
 
 <p class="hero-sub">
   I combine physics-based modeling, CFD, optimization, and experimental engineering
   to study thermal and energy systems — and I am looking for a
-  <strong>PhD position starting fall 2026</strong> in energy storage or sustainable thermal systems.
+  <span class="phd">PhD position starting fall 2026</span> in energy storage or
+  sustainable thermal systems.
 </p>
 
 <div class="cta-row">

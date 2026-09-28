@@ -94,6 +94,72 @@ document.addEventListener("DOMContentLoaded", function () {
     homeBars.forEach((el) => hbObs.observe(el));
   }
 
+  // 2e) Portrait ring dots + energy flow lines
+  const fig = document.querySelector(".profile figure");
+  if (fig && !fig.querySelector(".orbit-dot")) {
+    // two dots riding the rings
+    [[ "6%", "50%" ], [ "94%", "44%" ]].forEach(function (pos) {
+      const d = document.createElement("div");
+      d.className = "orbit-dot";
+      d.style.top = pos[0];
+      d.style.left = pos[1];
+      fig.appendChild(d);
+    });
+  }
+
+  // energy flow lines: lightweight 2D canvas, lower-right of hero
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const flow = document.createElement("canvas");
+    flow.id = "flow-lines";
+    flow.style.cssText = "position:absolute;top:-40px;left:-60px;width:calc(100% + 120px);height:620px;pointer-events:none;z-index:-1;";
+    const art = document.querySelector(".about .post article");
+    if (art) {
+      art.style.position = "relative";
+      art.prepend(flow);
+      const fx = flow.getContext("2d");
+      let fw, fh;
+      function sizeFlow() {
+        fw = flow.width = flow.offsetWidth;
+        fh = flow.height = flow.offsetHeight;
+      }
+      sizeFlow();
+      window.addEventListener("resize", sizeFlow);
+      // 8 streamlines: bezier paths with a moving dash-dot pulse
+      const lines = Array.from({length: 8}, function (_, i) {
+        return { y: 0.25 + i * 0.09, speed: 0.0012 + Math.random() * 0.0018, offset: Math.random() };
+      });
+      let ft = 0;
+      (function drawFlow() {
+        requestAnimationFrame(drawFlow);
+        if (document.hidden) return;
+        ft += 1;
+        fx.clearRect(0, 0, fw, fh);
+        lines.forEach(function (ln) {
+          const y = fh * ln.y;
+          const grad = fx.createLinearGradient(0, 0, fw, 0);
+          grad.addColorStop(0, "rgba(25,211,197,0)");
+          grad.addColorStop(0.5, "rgba(25,211,197,0.14)");
+          grad.addColorStop(1, "rgba(59,130,246,0)");
+          fx.strokeStyle = grad;
+          fx.lineWidth = 1;
+          fx.beginPath();
+          for (let x = 0; x <= fw; x += 24) {
+            const yy = y + Math.sin(x * 0.008 + ln.offset * 6 + ft * 0.004 * ln.speed * 500) * 12;
+            x === 0 ? fx.moveTo(x, yy) : fx.lineTo(x, yy);
+          }
+          fx.stroke();
+          // pulse traveling along the line
+          const px = ((ft * ln.speed * 60 + ln.offset * fw) % (fw + 120)) - 60;
+          const py = y + Math.sin(px * 0.008 + ln.offset * 6 + ft * 0.004 * ln.speed * 500) * 12;
+          fx.fillStyle = "rgba(25,211,197,0.5)";
+          fx.beginPath();
+          fx.arc(px, py, 1.6, 0, Math.PI * 2);
+          fx.fill();
+        });
+      })();
+    }
+  }
+
   // 3) Rotating profile photo: alternate formal headshot <-> candid photo
   const profileImg = document.querySelector(".profile img");
   if (profileImg && profileImg.src) {

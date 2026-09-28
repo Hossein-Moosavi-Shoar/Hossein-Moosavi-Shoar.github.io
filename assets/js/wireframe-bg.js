@@ -14,7 +14,7 @@
     const canvas = document.createElement("canvas");
     canvas.id = "wireframe-bg";
     canvas.style.cssText =
-      "position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0.85;";
+      "position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0.45;";
     document.body.appendChild(canvas);
 
     const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
@@ -54,6 +54,7 @@
     });
     spinner.add(new THREE.LineSegments(new THREE.EdgesGeometry(wheelGeo, 28), edgeMat));
     wheelGroup.rotation.x = 1.05; // show nose + blades
+    wheelGroup.position.set(2.4, -0.4, -1); // lower-right, out of the text column
     scene.add(wheelGroup);
 
 
