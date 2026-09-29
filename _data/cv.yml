@@ -181,17 +181,70 @@ cv:
         date: 2021
 
     Skills:
-      - name: Programming
-        keywords: "MATLAB (MPT Academy, high intermediate), EES (professional), Python, C/C++, COMSOL Multiphysics"
+      - name: MATLAB
+        level: High intermediate
+        keywords: "MPT Academy-educated; system modeling, ODEs, optimization"
+        percent: 75
 
-      - name: CFD and Simulation
-        keywords: "Ansys Fluent, SpaceClaim, Meshing, ICM, CFD-Post, DesignModeler, UDF coding, STAR-CCM+, Aspen-HTRI, COMSOL, Carrier HAP e-Design"
+      - name: EES
+        level: Professional
+        keywords: "Engineering Equation Solver — thermodynamic cycles, property calls"
+        percent: 90
 
-      - name: CAD
-        keywords: "SolidWorks (certified, Iran TVTO), CATIA (certified), Inventor, AutoCAD"
+      - name: Python
+        level: Low intermediate
+        keywords: "Data analysis, automation, quick engineering tools"
+        percent: 40
 
-      - name: Hands-on
-        keywords: "Welding and visual testing (VT), turning machine operation, laser cutting, Arduino programming"
+      - name: C / C++
+        level: Elementary
+        keywords: "Compiled performance code"
+        percent: 25
+
+      - name: Ansys (Fluent, SpaceClaim, Meshing, CFD-Post, UDF)
+        level: Intermediate
+        keywords: "CFD, conjugate heat transfer, UDF coding"
+        percent: 65
+
+      - name: STAR-CCM+
+        level: Low intermediate
+        keywords: "Multiphysics CFD (CFD course, bachelor)"
+        percent: 40
+
+      - name: Aspen-HTRI
+        level: Low intermediate
+        keywords: "Heat exchanger design (course)"
+        percent: 40
+
+      - name: COMSOL Multiphysics
+        level: —
+        keywords: "Multiphysics simulation"
+        percent: 40
+
+      - name: Carrier HAP e-Design
+        level: —
+        keywords: "HVAC load calculation and system design"
+        percent: 40
+
+      - name: SolidWorks
+        level: High intermediate (certified, Iran TVTO)
+        keywords: "Parts, assemblies, drawings"
+        percent: 75
+
+      - name: CATIA
+        level: High intermediate (certified, Iran TVTO)
+        keywords: "Surface and solid modeling"
+        percent: 75
+
+      - name: Inventor
+        level: Low intermediate
+        keywords: "Learned during apprenticeship"
+        percent: 40
+
+      - name: AutoCAD
+        level: Low intermediate
+        keywords: "2D drafting"
+        percent: 40
 
     Languages:
       - name: Persian

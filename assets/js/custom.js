@@ -50,20 +50,22 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // 2c) Animated skill bars on the CV page (.skill-item divs)
+  // 2c) Animated skill bars on the CV page — values from the CV itself
   const skillItems = document.querySelectorAll(".skill-item");
   if (skillItems.length) {
+    const levels = {
+      "MATLAB": 75, "EES": 90, "Python": 40, "C / C++": 25,
+      "Ansys": 65, "STAR-CCM+": 40, "Aspen-HTRI": 40,
+      "COMSOL": 40, "Carrier HAP": 40,
+      "SolidWorks": 75, "CATIA": 75, "Inventor": 40, "AutoCAD": 40,
+    };
     skillItems.forEach((item) => {
-      const text = item.textContent.toLowerCase();
-      let level = null;
-      if (text.includes("programming")) level = 88;        // MATLAB/EES strong
-      else if (text.includes("cfd")) level = 80;           // Fluent etc.
-      else if (text.includes("cad")) level = 78;           // SolidWorks/CATIA
-      else if (text.includes("hands-on")) level = 70;      // welding etc.
-      if (level) {
+      const label = item.querySelector("strong") ? item.querySelector("strong").textContent : "";
+      const key = Object.keys(levels).find((k) => label.toLowerCase().includes(k.toLowerCase()));
+      if (key) {
         const bar = document.createElement("div");
         bar.className = "skillbar";
-        bar.innerHTML = '<div class="fill" data-level="' + level + '"></div>';
+        bar.innerHTML = '<div class="fill" data-level="' + levels[key] + '"></div>';
         item.appendChild(bar);
       }
     });
@@ -78,20 +80,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }, { threshold: 0.2 });
     skillItems.forEach((el) => barObs.observe(el));
-  }
-
-  // 2d) Animate skill bars on homepage skills-grid too
-  const homeBars = document.querySelectorAll(".skills-grid .fill, .skill-card .fill");
-  if (homeBars.length) {
-    const hbObs = new IntersectionObserver((entries) => {
-      entries.forEach((en) => {
-        if (en.isIntersecting) {
-          en.target.style.width = en.target.dataset.level + "%";
-          hbObs.unobserve(en.target);
-        }
-      });
-    }, { threshold: 0.3 });
-    homeBars.forEach((el) => hbObs.observe(el));
   }
 
   // 2e) Portrait ring dots + energy flow lines

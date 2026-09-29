@@ -50,34 +50,6 @@ latest_posts:
 
 {% include news.liquid limit=true %}
 
-## Research
-
-<p class="section-intro">My work groups into three connected themes — the engineering question comes first, the method follows.</p>
-
-<div class="theme-grid">
-  <article class="theme-card">
-    <div class="theme-num">01</div>
-    <h3>Thermal Systems</h3>
-    <p>High-temperature heat pumps, thermal cycles, energy storage, and system-level analysis.</p>
-    <div class="tag-row"><span class="pill">Heat pumps</span><span class="pill">Thermodynamics</span><span class="pill">Optimization</span></div>
-    <div class="card-line"></div>
-  </article>
-  <article class="theme-card">
-    <div class="theme-num">02</div>
-    <h3>Heat Transfer &amp; Surfaces</h3>
-    <p>Heat exchangers, dropwise condensation, and surface-driven enhancement of heat transfer.</p>
-    <div class="tag-row"><span class="pill">Condensation</span><span class="pill">Heat exchangers</span><span class="pill">CFD</span></div>
-    <div class="card-line"></div>
-  </article>
-  <article class="theme-card">
-    <div class="theme-num">03</div>
-    <h3>Energy &amp; Water</h3>
-    <p>Thermoelectric systems and atmospheric water harvesting, with a techno-economic lens.</p>
-    <div class="tag-row"><span class="pill">Thermoelectric</span><span class="pill">Water harvesting</span><span class="pill">Techno-economics</span></div>
-    <div class="card-line"></div>
-  </article>
-</div>
-
 ## Selected Projects
 
 <p class="section-intro">
@@ -88,7 +60,7 @@ latest_posts:
 <div class="proj-grid">
   <article class="proj-card">
     <div class="proj-art">
-      <img src="/assets/img/proj_heatpump.jpg" alt="Cascade heat pump project"
+      <img src="/assets/img/projects/proj_heatpump.png" alt="Cascade heat pump project"
            onerror="this.parentElement.classList.add('no-img'); this.remove();">
     </div>
     <div class="proj-body">
@@ -100,7 +72,7 @@ latest_posts:
   </article>
   <article class="proj-card">
     <div class="proj-art">
-      <img src="/assets/img/proj_condensation.jpg" alt="Condensation surfaces project"
+      <img src="/assets/img/projects/proj_condensation.png" alt="Condensation surfaces project"
            onerror="this.parentElement.classList.add('no-img'); this.remove();">
     </div>
     <div class="proj-body">
@@ -112,7 +84,7 @@ latest_posts:
   </article>
   <article class="proj-card">
     <div class="proj-art">
-      <img src="/assets/img/proj_cfd.jpg" alt="CFD and engineering models"
+      <img src="/assets/img/projects/proj_cfd.png" alt="CFD and engineering models"
            onerror="this.parentElement.classList.add('no-img'); this.remove();">
     </div>
     <div class="proj-body">

@@ -1117,3 +1117,22 @@ html[data-theme="dark"] .stat-num {
 }
 
 .hero-role { margin-top: 1.6rem; }
+
+
+/* Hero headline: readable in BOTH modes */
+.hero-lead { color: #16202c; } /* light mode: dark ink */
+html:not([data-theme="dark"]) .hero-lead em {
+  background: linear-gradient(90deg, #0e7fd9, #6d28d9);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+html[data-theme="dark"] .hero-lead { color: #F4F7FA; }
+
+
+/* ===== Thesis page ===== */
+.thesis-abstract {
+  max-width: 720px;
+  text-align: justify;
+  color: var(--global-text-color, #333);
+}
