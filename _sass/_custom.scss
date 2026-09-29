@@ -4,7 +4,8 @@
 /* Center the location text under the profile photo */
 .profile .more-info {
   text-align: center;
-  width: 100%;
+  width: fit-content;
+  color: #AAB6C5 !important;
 }
 
 /* Justify body text across the site */
@@ -977,16 +978,16 @@ html:not([data-theme="dark"]) .stat {
   font-weight: 600;
 }
 
-/* Dark hero backdrop: near-black navy panel behind hero area */
+/* Dark hero backdrop: near-black navy panel behind hero area (both modes) */
 .about .post article::before {
   content: "";
   position: absolute;
   top: -40px; left: -60px; right: -60px;
-  height: 620px;
+  height: 780px;
   background:
-    radial-gradient(900px 420px at 78% 0%, rgba(25, 211, 197, 0.09), transparent 60%),
-    radial-gradient(700px 380px at 10% 10%, rgba(59, 130, 246, 0.08), transparent 55%),
-    linear-gradient(180deg, #020812 0%, rgba(3, 9, 20, 0.96) 55%, transparent 100%);
+    radial-gradient(900px 420px at 78% 0%, rgba(25, 211, 197, 0.10), transparent 60%),
+    radial-gradient(700px 380px at 10% 10%, rgba(59, 130, 246, 0.09), transparent 55%),
+    linear-gradient(180deg, #020812 0%, #030914 62%, rgba(3, 9, 20, 0.88) 82%, rgba(3, 9, 20, 0.35) 100%);
   border-radius: 0 0 32px 32px;
   z-index: -2;
   pointer-events: none;
@@ -1119,15 +1120,8 @@ html[data-theme="dark"] .stat-num {
 .hero-role { margin-top: 1.6rem; }
 
 
-/* Hero headline: readable in BOTH modes */
-.hero-lead { color: #16202c; } /* light mode: dark ink */
-html:not([data-theme="dark"]) .hero-lead em {
-  background: linear-gradient(90deg, #0e7fd9, #6d28d9);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-html[data-theme="dark"] .hero-lead { color: #F4F7FA; }
+/* Hero headline: on dark panel in both modes */
+.hero-lead { color: #F4F7FA; }
 
 
 /* ===== Thesis page ===== */
@@ -1219,14 +1213,15 @@ html:not([data-theme="dark"]) .theme-card p,
 html:not([data-theme="dark"]) .proj-body p,
 html:not([data-theme="dark"]) .tool span,
 html:not([data-theme="dark"]) .icon-item span,
-html:not([data-theme="dark"]) .stat-label,
 html:not([data-theme="dark"]) .news .date,
 html:not([data-theme="dark"]) .about-text p {
   color: #3d4854;
 }
+/* stats sit on the dark hero panel: light labels in both modes */
+.stat-label { color: #AAB6C5 !important; }
+/* toolbox icon strip sits below the panel: keep dark grey labels (handled above) */
 /* hero role + sub slightly darker too */
-html:not([data-theme="dark"]) .hero-role { color: #2a3441; }
-html:not([data-theme="dark"]) .hero-sub { color: #2a3441; background: rgba(255,255,255,0.88); }
+html:not([data-theme="dark"]) .hero-role { color: #AAB6C5; }
 /* entry-sub / meta text in CV */
 html:not([data-theme="dark"]) .entry-sub,
 html:not([data-theme="dark"]) .when,
