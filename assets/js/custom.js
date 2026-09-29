@@ -148,6 +148,48 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  // 2f) Projects carousel: arrows + dots
+  document.querySelectorAll(".carousel").forEach(function (car) {
+    const track = car.querySelector(".car-track");
+    const prev = car.querySelector(".car-btn.prev");
+    const next = car.querySelector(".car-btn.next");
+    const dotsBox = car.parentNode.querySelector(".car-dots");
+    const slides = track ? Array.from(track.children) : [];
+    if (!track || !slides.length) return;
+
+    // build dots
+    let dots = [];
+    if (dotsBox) {
+      slides.forEach(function (_, i) {
+        const d = document.createElement("span");
+        d.className = "dot" + (i === 0 ? " active" : "");
+        d.addEventListener("click", function () {
+          track.scrollTo({ left: slides[i].offsetLeft - track.offsetLeft, behavior: "smooth" });
+        });
+        dotsBox.appendChild(d);
+        dots.push(d);
+      });
+    }
+
+    function slideStep() {
+      return slides[0].offsetWidth + 19; // width + gap
+    }
+    function currentIndex() {
+      return Math.min(slides.length - 1, Math.round(track.scrollLeft / slideStep()));
+    }
+    function updateDots() {
+      const idx = currentIndex();
+      dots.forEach(function (d, i) { d.classList.toggle("active", i === idx); });
+    }
+    prev.addEventListener("click", function () {
+      track.scrollBy({ left: -slideStep(), behavior: "smooth" });
+    });
+    next.addEventListener("click", function () {
+      track.scrollBy({ left: slideStep(), behavior: "smooth" });
+    });
+    track.addEventListener("scroll", updateDots, { passive: true });
+  });
+
   // 3) Rotating profile photo: alternate formal headshot <-> candid photo
   const profileImg = document.querySelector(".profile img");
   if (profileImg && profileImg.src) {

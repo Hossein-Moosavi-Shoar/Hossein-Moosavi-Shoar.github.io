@@ -1136,3 +1136,101 @@ html[data-theme="dark"] .hero-lead { color: #F4F7FA; }
   text-align: justify;
   color: var(--global-text-color, #333);
 }
+
+
+/* ===== Projects carousel (single row, arrows) ===== */
+.carousel {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 1.4rem 0 0.6rem;
+}
+.car-track {
+  display: flex;
+  gap: 1.2rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  flex: 1;
+  padding: 6px 2px 14px;
+  scrollbar-width: none;
+}
+.car-track::-webkit-scrollbar { display: none; }
+.car-slide {
+  flex: 0 0 min(360px, 82vw);
+  scroll-snap-align: start;
+}
+.car-slide .proj-card { height: 100%; }
+.car-btn {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(120, 130, 150, 0.35);
+  background: var(--global-bg, #fff);
+  color: var(--global-text-color, #333);
+  font-size: 1.15rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.car-btn:hover {
+  border-color: #3b82f6;
+  color: #3b82f6;
+  transform: scale(1.08);
+}
+html[data-theme="dark"] .car-btn {
+  background: rgba(18, 24, 31, 0.9);
+  border-color: rgba(255, 255, 255, 0.14);
+  color: #edf2f7;
+}
+html[data-theme="dark"] .car-btn:hover {
+  border-color: #25d0c4;
+  color: #25d0c4;
+}
+.car-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 1.6rem;
+}
+.car-dots .dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: rgba(120, 130, 150, 0.35);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.car-dots .dot.active {
+  background: #3b82f6;
+  transform: scale(1.25);
+}
+html[data-theme="dark"] .car-dots .dot.active { background: #25d0c4; }
+
+/* ===== Light-mode text contrast fixes ===== */
+/* secondary text: darker grey for readability on white */
+html:not([data-theme="dark"]) body {
+  --global-text-color-muted: #3d4854;
+}
+html:not([data-theme="dark"]) .section-intro,
+html:not([data-theme="dark"]) .pub-venue,
+html:not([data-theme="dark"]) .contact-lead,
+html:not([data-theme="dark"]) .muted-line,
+html:not([data-theme="dark"]) .theme-card p,
+html:not([data-theme="dark"]) .proj-body p,
+html:not([data-theme="dark"]) .tool span,
+html:not([data-theme="dark"]) .icon-item span,
+html:not([data-theme="dark"]) .stat-label,
+html:not([data-theme="dark"]) .news .date,
+html:not([data-theme="dark"]) .about-text p {
+  color: #3d4854;
+}
+/* hero role + sub slightly darker too */
+html:not([data-theme="dark"]) .hero-role { color: #2a3441; }
+html:not([data-theme="dark"]) .hero-sub { color: #2a3441; background: rgba(255,255,255,0.88); }
+/* entry-sub / meta text in CV */
+html:not([data-theme="dark"]) .entry-sub,
+html:not([data-theme="dark"]) .when,
+html:not([data-theme="dark"]) .image-wrap figcaption,
+html:not([data-theme="dark"]) .cv .date-column span {
+  color: #3d4854;
+}

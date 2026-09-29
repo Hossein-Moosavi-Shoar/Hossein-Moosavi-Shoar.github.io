@@ -52,49 +52,70 @@ latest_posts:
 
 ## Selected Projects
 
-<p class="section-intro">
-  Three projects that show the range — from cycle modeling to surfaces to computation.
-  <em>Image slots are ready for CFD contours, MATLAB plots, and lab photos.</em>
-</p>
+<p class="section-intro">Five projects that show the range — cycle modeling, surfaces, computation, and two theses.</p>
 
-<div class="proj-grid">
-  <article class="proj-card">
-    <div class="proj-art">
-      <img src="/assets/img/projects/proj_heatpump.png" alt="Cascade heat pump project"
-           onerror="this.parentElement.classList.add('no-img'); this.remove();">
+<div class="carousel">
+  <button class="car-btn prev" aria-label="Previous">&#8592;</button>
+  <div class="car-track">
+    <div class="car-slide">
+      <article class="proj-card">
+        <div class="proj-art"><img src="/assets/img/projects/proj_heatpump.png" alt="Cascade heat pump project"></div>
+        <div class="proj-body">
+          <div class="theme-num">THERMAL SYSTEMS</div>
+          <h3>High-Temperature Cascade Heat Pump</h3>
+          <p>Cycle modeling, refrigerant-property evaluation, heat-exchanger analysis, and uncertainty studies of a zeotropic cascade system with an ejector and phase separator.</p>
+          <div class="tag-row"><span class="pill">MATLAB</span><span class="pill">REFPROP</span><span class="pill">Optimization</span></div>
+        </div>
+      </article>
     </div>
-    <div class="proj-body">
-      <div class="theme-num">THERMAL SYSTEMS</div>
-      <h3>High-Temperature Cascade Heat Pump</h3>
-      <p>Cycle modeling, refrigerant-property evaluation, heat-exchanger analysis, and uncertainty studies of a zeotropic cascade system with an ejector and phase separator.</p>
-      <div class="tag-row"><span class="pill">MATLAB</span><span class="pill">REFPROP</span><span class="pill">Optimization</span></div>
+    <div class="car-slide">
+      <article class="proj-card">
+        <div class="proj-art"><img src="/assets/img/projects/proj_condensation.png" alt="Condensation surfaces project"></div>
+        <div class="proj-body">
+          <div class="theme-num">HEAT TRANSFER</div>
+          <h3>Thermo-responsive Condensation Surfaces</h3>
+          <p>Beeswax nanostructured surfaces that switch behavior across solid, liquid, and transition states to enhance dropwise condensation.</p>
+          <div class="tag-row"><span class="pill">Experiment</span><span class="pill">Heat transfer</span><span class="pill">Surfaces</span></div>
+        </div>
+      </article>
     </div>
-  </article>
-  <article class="proj-card">
-    <div class="proj-art">
-      <img src="/assets/img/projects/proj_condensation.png" alt="Condensation surfaces project"
-           onerror="this.parentElement.classList.add('no-img'); this.remove();">
+    <div class="car-slide">
+      <article class="proj-card">
+        <div class="proj-art"><img src="/assets/img/projects/proj_cfd.png" alt="CFD and engineering models"></div>
+        <div class="proj-body">
+          <div class="theme-num">COMPUTATIONAL</div>
+          <h3>CFD &amp; Engineering Models</h3>
+          <p>Impinging-jet cooling with nanofluids, power-law boundary-layer solutions, UDF development, and custom MATLAB design tools.</p>
+          <div class="tag-row"><span class="pill">Fluent</span><span class="pill">STAR-CCM+</span><span class="pill">Python</span></div>
+        </div>
+      </article>
     </div>
-    <div class="proj-body">
-      <div class="theme-num">HEAT TRANSFER</div>
-      <h3>Thermo-responsive Condensation Surfaces</h3>
-      <p>Beeswax nanostructured surfaces that switch behavior across solid, liquid, and transition states to enhance dropwise condensation.</p>
-      <div class="tag-row"><span class="pill">Experiment</span><span class="pill">Heat transfer</span><span class="pill">Surfaces</span></div>
+    <div class="car-slide">
+      <article class="proj-card">
+        <div class="proj-art"><img src="/assets/img/projects/thesis_bachelor.png" alt="Bachelor thesis — air-water generator"></div>
+        <div class="proj-body">
+          <div class="theme-num">B.SC. THESIS</div>
+          <h3>Thermoelectric Air–Water Generator</h3>
+          <p>Semi-analytical modeling of TEC-integrated heat exchangers for atmospheric water harvesting — published as a journal paper.</p>
+          <div class="tag-row"><span class="pill">MATLAB</span><span class="pill">Thermoelectric</span><span class="pill">Water harvesting</span></div>
+        </div>
+      </article>
     </div>
-  </article>
-  <article class="proj-card">
-    <div class="proj-art">
-      <img src="/assets/img/projects/proj_cfd.png" alt="CFD and engineering models"
-           onerror="this.parentElement.classList.add('no-img'); this.remove();">
+    <div class="car-slide">
+      <article class="proj-card">
+        <div class="proj-art"><img src="/assets/img/projects/thesis_master.jpg" alt="Master thesis — paint rheology in heat exchangers"></div>
+        <div class="proj-body">
+          <div class="theme-num">M.SC. THESIS</div>
+          <h3>Paint Rheology in Heat Exchangers</h3>
+          <p>Hybrid coatings with Constructal-Law patterns, custom reversible paints, and computer-vision coverage analysis for dropwise condensation.</p>
+          <div class="tag-row"><span class="pill">Experiment</span><span class="pill">Rheology</span><span class="pill">CV / DBSCAN</span></div>
+        </div>
+      </article>
     </div>
-    <div class="proj-body">
-      <div class="theme-num">COMPUTATIONAL</div>
-      <h3>CFD &amp; Engineering Models</h3>
-      <p>Impinging-jet cooling with nanofluids, power-law boundary-layer solutions, UDF development, and custom MATLAB design tools.</p>
-      <div class="tag-row"><span class="pill">Fluent</span><span class="pill">STAR-CCM+</span><span class="pill">Python</span></div>
-    </div>
-  </article>
+  </div>
+  <button class="car-btn next" aria-label="Next">&#8594;</button>
 </div>
+<div class="car-dots"></div>
 
 ## Toolbox
 
