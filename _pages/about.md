@@ -52,7 +52,7 @@ latest_posts:
 
 ## Selected Projects
 
-<p class="section-intro">Five projects that show the range — cycle modeling, surfaces, computation, and two theses.</p>
+<p class="section-intro">Six projects that show the range — cycle modeling, surfaces, computation, and two theses.</p>
 
 <div class="carousel">
   <button class="car-btn prev" aria-label="Previous">&#8592;</button>
@@ -109,6 +109,17 @@ latest_posts:
           <h3>Paint Rheology in Heat Exchangers</h3>
           <p>Hybrid coatings with Constructal-Law patterns, custom reversible paints, and computer-vision coverage analysis for dropwise condensation.</p>
           <div class="tag-row"><span class="pill">Experiment</span><span class="pill">Rheology</span><span class="pill">CV / DBSCAN</span></div>
+        </div>
+      </article>
+    </div>
+    <div class="car-slide">
+      <article class="proj-card">
+        <div class="proj-art"><img src="/assets/img/projects/proj_body_model.png" alt="Two-node thermal modeling of the human body"></div>
+        <div class="proj-body">
+          <div class="theme-num">THERMAL MODELING</div>
+          <h3>Two-Node Modeling of the Human Body</h3>
+          <p>Thermal modeling of the human body using a two-node approach for thermal comfort and heat-transfer analysis.</p>
+          <div class="tag-row"><span class="pill">Thermal comfort</span><span class="pill">Heat transfer</span><span class="pill">MATLAB</span></div>
         </div>
       </article>
     </div>
