@@ -52,7 +52,7 @@ latest_posts:
 
 ## Selected Projects
 
-<p class="section-intro">Six projects that show the range — cycle modeling, surfaces, computation, two theses, and the thermodynamics of life.</p>
+<p class="section-intro">Five projects that show the range — cycle modeling, surfaces, computation, and two theses.</p>
 
 <div class="carousel">
   <button class="car-btn prev" aria-label="Previous">&#8592;</button>
@@ -109,17 +109,6 @@ latest_posts:
           <h3>Paint Rheology in Heat Exchangers</h3>
           <p>Hybrid coatings with Constructal-Law patterns, custom reversible paints, and computer-vision coverage analysis for dropwise condensation.</p>
           <div class="tag-row"><span class="pill">Experiment</span><span class="pill">Rheology</span><span class="pill">CV / DBSCAN</span></div>
-        </div>
-      </article>
-    </div>
-    <div class="car-slide">
-      <article class="proj-card">
-        <div class="proj-art"><img src="/assets/img/projects/proj_entropic_age.jpg" alt="Entropic age theory — graphical abstract: exergy destruction as the battery of life, temperature-controlled exergy flowrate, and Constructal-Law DNA evolution"></div>
-        <div class="proj-body">
-          <div class="theme-num">THERMODYNAMICS OF LIFE</div>
-          <h3>Entropic Age &amp; the Thermodynamics of Longevity</h3>
-          <p>A thermodynamic theory of aging: the human body is modeled with the ASHRAE two-node method to track exergy destruction — the "battery of life" — showing that living steadily depletes it, and that temperature sets the depletion rate. Optimized thermal conditions are predicted to extend lifespan by up to 38%, and the Constructal Law links ambient temperature to evolutionary trends in human height and weight across climates.</p>
-          <div class="tag-row"><span class="pill">Exergy analysis</span><span class="pill">ASHRAE two-node model</span><span class="pill">Constructal Law</span></div>
         </div>
       </article>
     </div>
